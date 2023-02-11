@@ -30,4 +30,4 @@ jobs:
             './*' => /var/www/api/
            
       - run: npm ci
-      - run: npm run build --if-present
+      - run: CI=false npm run build --if-present
