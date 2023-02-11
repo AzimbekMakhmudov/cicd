@@ -21,18 +21,9 @@ jobs:
       - uses: actions/checkout@v3
           
       - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: ${{ secrets.SSH_USER }}
-          server: ${{ secrets.SSH_HOST }}
-          port: 22 # default is 22
-          ssh_private_key: ${{ secrets.SSH_KEY }}
- 
-          
-          # will put all file under this path
-          local_path: ./* # default is ./*
-          # files will copy to under remote_path
-          remote_path: /var/www/api
-          
-          # sftp args
-          args: '-o ConnectTimeout=5'
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          TARGET: /var/www/api
