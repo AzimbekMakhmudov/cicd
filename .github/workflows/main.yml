@@ -23,10 +23,10 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: root
+          username: ubuntu
           server: 206.54.191.10
           port: 22 # default is 22
-          ssh_private_key: ${{ secrets.PASSWORD }}
+          ssh_private_key: ${{ secrets.SECRET_KEY }}
  
           
           # will put all file under this path
