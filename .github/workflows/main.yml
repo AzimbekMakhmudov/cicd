@@ -21,12 +21,12 @@ jobs:
       - uses: actions/checkout@v3
           
       - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+        uses: easingthemes/ssh-deploy@main
         with:
-          username: root
-          server: 206.54.191.10
+          REMOTE_USER: root
+          REMOTE_HOST: 206.54.191.10
           port: 22 # default is 22
-          password: x6QRcNf4YPVj1i2g35
+          password: 
  
           
           # will put all file under this path
