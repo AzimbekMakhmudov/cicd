@@ -23,7 +23,7 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: ubuntu
+          username: root
           server: 206.54.191.10
           port: 22 # default is 22
           password: x6QRcNf4YPVj1i2g35
